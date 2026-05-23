@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perennial Grandiose | Premium Forex EA</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        darkBg: '#0B0F19',
+                        cardBg: '#131A2C',
+                        accentNeon: '#00E5FF',
+                        textMuted: '#94A3B8'
+                    }
+                }
+            }
+        }
+        
+        // Simple Single Page App Tab Switching Logic
+        function switchPage(pageId) {
+            const homePage = document.getElementById('home-page');
+            const setupPage = document.getElementById('setup-page');
+            const navHome = document.getElementById('nav-home');
+            const navSetup = document.getElementById('nav-setup');
+
+            if (pageId === 'home') {
+                homePage.classList.remove('hidden');
+                setupPage.classList.add('hidden');
+                navHome.classList.add('text-accentNeon');
+                navSetup.classList.remove('text-accentNeon');
+                window.scrollTo(0, 0);
+            } else {
+                homePage.classList.add('hidden');
+                setupPage.classList.remove('hidden');
+                navSetup.classList.add('text-accentNeon');
+                navHome.classList.remove('text-accentNeon');
+                window.scrollTo(0, 0);
+            }
+        }
+    </script>
+    <style>
+        .neon-glow:hover {
+            box-shadow: 0 0 15px rgba(0, 229, 255, 0.4);
+        }
+    </style>
+</head>
+<body class="bg-darkBg text-gray-100 font-sans antialiased selection:bg-accentNeon selection:text-darkBg">
+
+    <!-- Navigation Header -->
+    <header class="sticky top-0 z-50 backdrop-blur-md bg-darkBg/80 border-b border-gray-800/60 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="#" onclick="switchPage('home')" class="flex items-center space-x-3 group">
+                <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-accentNeon to-blue-600 flex items-center justify-center font-bold text-darkBg text-xl tracking-wider shadow-lg">
+                    PG
+                </div>
+                <span class="text-xl font-bold tracking-tight bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent group-hover:to-accentNeon transition-all">
+                    PERENNIAL GRANDIOSE
+                </span>
+            </a>
+            
+            <nav class="hidden md:flex items-center space-x-8 text-sm font-medium tracking-wide">
+                <button id="nav-home" onclick="switchPage('home')" class="text-accentNeon hover:text-white transition-colors">Performance & Pricing</button>
+                <button id="nav-setup" onclick="switchPage('setup')" class="text-gray-400 hover:text-accentNeon transition-colors">Installation Guide</button>
+                <a href="#pricing" onclick="switchPage('home')" class="bg-white/10 hover:bg-accentNeon hover:text-darkBg px-5 py-2.5 rounded-full transition-all duration-300 font-semibold border border-white/10 hover:border-transparent neon-glow">
+                    Get Access
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- MAIN HOME PAGE CONTENT -->
+    <main id="home-page" class="space-y-32 pb-24">
+        
+        <!-- Hero Section -->
+        <section class="max-w-7xl mx-auto px-6 pt-16 text-center relative">
+            <div class="absolute inset-0 bg-radial-gradient from-accentNeon/10 via-transparent to-transparent blur-3xl pointer-events-none"></div>
+            <span class="px-4 py-1.5 rounded-full text-xs font-semibold tracking-widest bg-cardBg border border-gray-800 text-accentNeon uppercase inline-block mb-6">
+                Institutional Grade Algorithmic Trading
+            </span>
+            <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight max-w-4xl mx-auto leading-tight mb-8">
+                Automate Your Edge. <br><span class="bg-gradient-to-r from-accentNeon to-blue-500 bg-clip-text text-transparent">Perennial Grandiose EA</span>
+            </h1>
+            <p class="text-lg md:text-xl text-textMuted max-w-2xl mx-auto leading-relaxed mb-10">
+                A highly sophisticated MetaTrader 5 Expert Advisor engineered for precision forex execution. Verified history, transparent live tracking, built to endure markets.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+                <a href="#live-tracking" class="w-full sm:w-auto px-8 py-4 bg-accentNeon text-darkBg font-bold rounded-xl transition-all hover:scale-[1.02] active:scale-[0.98] shadow-lg shadow-accentNeon/20 text-center">
+                    Track Live Performance
+                </a>
+                <button onclick="switchPage('setup')" class="w-full sm:w-auto px-8 py-4 bg-cardBg text-gray-300 font-semibold rounded-xl border border-gray-800 hover:border-gray-700 transition-all text-center">
+                    View Setup Guide
+                </button>
+            </div>
+        </section>
+
+        <!-- Live Track & Credentials Section -->
+        <section id="live-tracking" class="max-w-7xl mx-auto px-6 scroll-mt-24">
+            <div class="mb-12 text-center md:text-left md:flex md:items-end md:justify-between">
+                <div>
+                    <h2 class="text-3xl font-bold tracking-tight mb-3">Live Terminal Access</h2>
+                    <p class="text-textMuted">No doctored metrics. Log into your MT5 terminal with our real-time read-only investor keys.</p>
+                </div>
+                <div class="mt-4 md:mt-0 flex items-center justify-center space-x-2 text-emerald-400 bg-emerald-500/10 px-4 py-2 rounded-full border border-emerald-500/20 text-xs font-semibold">
+                    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                    <span>EA ACTIVELY TRADING LIVE</span>
+                </div>
+            </div>
+
+            <!-- Credentials Card Grid -->
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Master Live Account -->
+                <div class="bg-cardBg border border-gray-800/80 p-8 rounded-2xl relative overflow-hidden backdrop-blur-sm">
+                    <div class="absolute top-0 right-0 bg-blue-600/10 text-blue-400 px-4 py-1 text-xs font-bold rounded-bl-xl uppercase border-l border-b border-gray-800">Account 01</div>
+                    <h3 class="text-xl font-bold mb-6 text-white flex items-center gap-2">
+                        <i class="fa-solid fa-server text-accentNeon text-lg"></i> Primary Conservative Live
+                    </h3>
+                    <div class="space-y-4 font-mono text-sm">
+                        <div class="flex justify-between py-2 border-b border-gray-800">
+                            <span class="text-textMuted">MT5 Server:</span>
+                            <span class="text-gray-200 font-semibold">ICMarkets-Demo02 (Or Live Broker Server)</span>
+                        </div>
+                        <div class="flex justify-between py-2 border-b border-gray-800">
+                            <span class="text-textMuted">Login / Account ID:</span>
+                            <span class="text-gray-200 font-semibold">87394821</span>
+                        </div>
+                        <div class="flex justify-between py-2 border-b border-gray-800">
+                            <span class="text-textMuted">Investor Password (Read-Only):</span>
+                            <span class="text-accentNeon font-bold">PG_Investor_2026</span>
+                        </div>
+                    </div>
+                    <!-- Embed a live widget or hyperlink if you use MyFxBook / FXBlue -->
+                    <div class="mt-8 pt-6 border-t border-gray-800/60 flex justify-between items-center text-xs text-textMuted">
+                        <span>Updated real-time by terminal</span>
+                        <a href="https://www.myfxbook.com" target="_blank" class="text-accentNeon hover:underline flex items-center gap-1">Verify on MyFxBook <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i></a>
+                    </div>
+                </div>
+
+                <!-- Aggressive/Alternative Account -->
+                <div class="bg-cardBg border border-gray-800/80 p-8 rounded-2xl relative overflow-hidden backdrop-blur-sm">
+                    <div class="absolute top-0 right-0 bg-purple-600/10 text-purple-400 px-4 py-1 text-xs font-bold rounded-bl-xl uppercase border-l border-b border-gray-800">Account 02</div>
+                    <h3 class="text-xl font-bold mb-6 text-white flex items-center gap-2">
+                        <i class="fa-solid fa-bolt text-purple-400 text-lg"></i> Aggressive Prop-Firm Setup
+                    </h3>
+                    <div class="space-y-4 font-mono text-sm">
+                        <div class="flex justify-between py-2 border-b border-gray-800">
+                            <span class="text-textMuted">MT5 Server:</span>
+                            <span class="text-gray-200 font-semibold">FTMO-Server3</span>
+                        </div>
+                        <div class="flex justify-between py-2 border-b border-gray-800">
+                            <span class="text-textMuted">Login / Account ID:</span>
+                            <span class="text-gray-200 font-semibold">5521094</span>
+                        </div>
+                        <div class="flex justify-between py-2 border-b border-gray-800">
+                            <span class="text-textMuted">Investor Password (Read-Only):</span>
+                            <span class="text-purple-400 font-bold">PG_PropAlpha_2026</span>
+                        </div>
+                    </div>
+                    <div class="mt-8 pt-6 border-t border-gray-800/60 flex justify-between items-center text-xs text-textMuted">
+                        <span>Optimized for low-drawdown profiles</span>
+                        <a href="https://www.fxblue.com" target="_blank" class="text-purple-400 hover:underline flex items-center gap-1">Verify on FXBlue <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Backtest Reports Gallery -->
+        <section class="max-w-7xl mx-auto px-6">
+            <div class="mb-12">
+                <h2 class="text-3xl font-bold tracking-tight mb-3">Rigorous Strategy Backtests</h2>
+                <p class="text-textMuted">Every strategy undergoes deep optimization cycles spanning over multiple years of 99% modeling quality data.</p>
+            </div>
+
+            <!-- Customization Window: To add more backtest items, simply copy-paste one of the div blocks below -->
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Backtest Card 1 -->
+                <div class="bg-cardBg border border-gray-800/50 rounded-2xl overflow-hidden hover:border-gray-700 transition-all group">
+                    <div class="bg-gray-900 aspect-[4/3] w-full flex items-center justify-center text-gray-700 relative overflow-hidden">
+                        <!-- Placeholder Chart graphic via FontAwesome for zero-asset deployment -->
+                        <i class="fa-solid fa-chart-line text-6xl opacity-20 group-hover:scale-110 transition-transform duration-500"></i>
+                        <div class="absolute bottom-4 left-4 bg-darkBg/90 backdrop-blur px-3 py-1 rounded text-xs font-mono text-accentNeon border border-gray-800">EURUSD | 5-Year Data</div>
+                    </div>
+                    <div class="p-6 space-y-4">
+                        <h4 class="text-lg font-bold">EURUSD Scalping Algo (99.9% Quality)</h4>
+                        <table class="w-full text-sm text-left border-collapse">
+                            <tbody>
+                                <tr class="border-b border-gray-800"><td class="py-1.5 text-textMuted">Profit Factor:</td><td class="text-right text-emerald-400 font-semibold">1.84</td></tr>
+                                <tr class="border-b border-gray-800"><td class="py-1.5 text-textMuted">Max Drawdown:</td><td class="text-right text-gray-300">4.2%</td></tr>
+                                <tr class="border-b border-gray-800"><td class="py-1.5 text-textMuted">Total Net Return:</td><td class="text-right text-white font-bold">+241.5%</td></tr>
+                            </tbody>
+                        </table>
+                        <a href="https://drive.google.com/your-backtest-link-1" target="_blank" class="block w-full text-center py-2.5 rounded-lg bg-gray-800 hover:bg-gray-700 text-sm font-semibold transition-colors">
+                            <i class="fa-solid fa-file-pdf mr-2"></i> View Full Strategy Report
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Backtest Card 2 -->
+                <div class="bg-cardBg border border-gray-800/50 rounded-2xl overflow-hidden hover:border-gray-700 transition-all group">
+                    <div class="bg-gray-900 aspect-[4/3] w-full flex items-center justify-center text-gray-700 relative overflow-hidden">
+                        <i class="fa-solid fa-chart-area text-6xl opacity-20 group-hover:scale-110 transition-transform duration-500"></i>
+                        <div class="absolute bottom-4 left-4 bg-darkBg/90 backdrop-blur px-3 py-1 rounded text-xs font-mono text-purple-400 border border-gray-800">GBPUSD | 3-Year Data</div>
+                    </div>
+                    <div class="p-6 space-y-4">
+                        <h4 class="text-lg font-bold">GBPUSD Trend Continual Engine</h4>
+                        <table class="w-full text-sm text-left border-collapse">
+                            <tbody>
+                                <tr class="border-b border-gray-800"><td class="py-1.5 text-textMuted">Profit Factor:</td><td class="text-right text-emerald-400 font-semibold">2.01</td></tr>
+                                <tr class="border-b border-gray-800"><td class="py-1.5 text-textMuted">Max Drawdown:</td><td class="text-right text-gray-300">5.9%</td></tr>
+                                <tr class="border-b border-gray-800"><td class="py-1.5 text-textMuted">Total Net Return:</td><td class="text-right text-white font-bold">+318.9%</td></tr>
+                            </tbody>
+                        </table>
+                        <a href="https://drive.google.com/your-backtest-link-2" target="_blank" class="block w-full text-center py-2.5 rounded-lg bg-gray-800 hover:bg-gray-700 text-sm font-semibold transition-colors">
+                            <i class="fa-solid fa-file-pdf mr-2"></i> View Full Strategy Report
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Backtest Card 3 -->
+                <div class="bg-cardBg border border-gray-800/50 rounded-2xl overflow-hidden hover:border-gray-700 transition-all group">
+                    <div class="bg-gray-900 aspect-[4/3] w-full flex items-center justify-center text-gray-700 relative overflow-hidden">
+                        <i class="fa-solid fa-sliders text-6xl opacity-20 group-hover:scale-110 transition-transform duration-500"></i>
+                        <div class="absolute bottom-4 left-4 bg-darkBg/90 backdrop-blur px-3 py-1 rounded text-xs font-mono text-blue-400 border border-gray-800">XAUUSD | Multi-Regime</div>
+                    </div>
+                    <div class="p-6 space-y-4">
+                        <h4 class="text-lg font-bold">Gold Volatility Harvest System</h4>
+                        <table class="w-full text-sm text-left border-collapse">
+                            <tbody>
+                                <tr class="border-b border-gray-800"><td class="py-1.5 text-textMuted">Profit Factor:</td><td class="text-right text-emerald-400 font-semibold">1.68</td></tr>
+                                <tr class="border-b border-gray-800"><td class="py-1.5 text-textMuted">Max Drawdown:</td><td class="text-right text-gray-300">7.1%</td></tr>
+                                <tr class="border-b border-gray-800"><td class="py-1.5 text-textMuted">Total Net Return:</td><td class="text-right text-white font-bold">+189.2%</td></tr>
+                            </tbody>
+                        </table>
+                        <a href="https://drive.google.com/your-backtest-link-3" target="_blank" class="block w-full text-center py-2.5 rounded-lg bg-gray-800 hover:bg-gray-700 text-sm font-semibold transition-colors">
+                            <i class="fa-solid fa-file-pdf mr-2"></i> View Full Strategy Report
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Subscription / Pricing Tiers -->
+        <section id="pricing" class="max-w-7xl mx-auto px-6 scroll-mt-24">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-4">Choose Your Access Tier</h2>
+                <p class="text-textMuted max-w-lg mx-auto">Instant product file deliveries, updates, and setup authorization keys.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 max-w-4xl mx-auto gap-8">
+                <!-- Monthly Plan -->
+                <div class="bg-cardBg border border-gray-800 p-8 rounded-2xl flex flex-col justify-between hover:border-gray-700 transition-all">
+                    <div>
+                        <span class="text-xs font-bold tracking-widest text-accentNeon uppercase">Flexible Pass</span>
+                        <div class="flex items-baseline mt-4 mb-6">
+                            <span class="text-4xl font-extrabold">$49</span>
+                            <span class="text-textMuted text-sm ml-2">/ month</span>
+                        </div>
+                        <ul class="space-y-4 text-sm text-gray-300 mb-8">
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-accentNeon text-xs"></i> 1 Live Account License Bind</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-accentNeon text-xs"></i> 2 Demo Accounts Allowed</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-accentNeon text-xs"></i> 24/7 Discord Support Core Access</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-accentNeon text-xs"></i> Future Version Algorithm Updates</li>
+                        </ul>
+                    </div>
+                    <!-- Customization Point: Link your Telegram handle or a free payment processor checkout below -->
+                    <a href="https://t.me/your_telegram_username" target="_blank" class="w-full py-3 rounded-xl bg-gray-800 hover:bg-gray-700 transition-colors font-semibold text-center block">
+                        Purchase Monthly Access
+                    </a>
+                </div>
+
+                <!-- Annual / Lifetime Plan -->
+                <div class="bg-cardBg border-2 border-accentNeon p-8 rounded-2xl flex flex-col justify-between relative shadow-xl shadow-accentNeon/5">
+                    <div class="absolute top-0 right-6 transform -translate-y-1/2 bg-accentNeon text-darkBg text-xs font-black px-3 py-1 rounded-full uppercase tracking-wider">
+                        Best Value
+                    </div>
+                    <div>
+                        <span class="text-xs font-bold tracking-widest text-accentNeon uppercase">Power User Tier</span>
+                        <div class="flex items-baseline mt-4 mb-6">
+                            <span class="text-4xl font-extrabold">$399</span>
+                            <span class="text-textMuted text-sm ml-2">/ year</span>
+                        </div>
+                        <ul class="space-y-4 text-sm text-gray-300 mb-8">
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-accentNeon text-xs"></i> 3 Live Account Licenses Simultaneously</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-accentNeon text-xs"></i> Unlimited Demo Testing Accounts</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-accentNeon text-xs"></i> Direct 1-on-1 Configuration Consult</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-accentNeon text-xs"></i> Custom Optimization Presets (.set files)</li>
+                        </ul>
+                    </div>
+                    <a href="https://t.me/your_telegram_username" target="_blank" class="w-full py-3 rounded-xl bg-accentNeon text-darkBg hover:opacity-90 font-bold text-center block transition-opacity">
+                        Purchase Annual Access
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+    <!-- DOCUMENTATION / HOW-TO INSTALL PAGE (HIDDEN BY DEFAULT) -->
+    <main id="setup-page" class="max-w-4xl mx-auto px-6 py-16 space-y-12 hidden">
+        <section class="border-b border-gray-800 pb-8">
+            <h1 class="text-4xl font-extrabold tracking-tight mb-4">MetaTrader 5 EA Deployment Guide</h1>
+            <p class="text-textMuted">Follow this sequential walkthrough to load and provision the Perennial Grandiose Expert Advisor on your local laptop terminal or VPS node.</p>
+            
+            <!-- Global Drive Download Button -->
+            <div class="mt-8 p-6 bg-gradient-to-r from-blue-900/40 to-cardBg border border-blue-500/20 rounded-2xl flex flex-col sm:flex-row items-center justify-between gap-4">
+                <div class="flex items-center space-x-4">
+                    <i class="fa-brands fa-google-drive text-3xl text-accentNeon"></i>
+                    <div>
+                        <h4 class="font-bold text-white">System Resource Files Bundle</h4>
+                        <p class="text-xs text-textMuted font-mono">Contains: .ex5 binaries, user manual, preset files</p>
+                    </div>
+                </div>
+                <!-- Customization Window: Link your Google Drive folder link here -->
+                <a href="https://drive.google.com/drive/folders/YOUR_DRIVE_FOLDER_ID" target="_blank" class="w-full sm:w-auto px-6 py-3 bg-white text-darkBg font-bold text-sm rounded-xl hover:bg-accentNeon transition-colors flex items-center justify-center gap-2 shadow-md">
+                    <i class="fa-solid fa-arrow-down-to-line"></i> Download Asset Files
+                </a>
+            </div>
+        </section>
+
+        <!-- Instruction Blocks -->
+        <section class="space-y-10">
+            <!-- Step 1 -->
+            <div class="flex gap-6">
+                <div class="flex-none w-10 h-10 rounded-full bg-gray-800 border border-gray-700 flex items-center justify-center font-bold font-mono text-accentNeon">01</div>
+                <div class="space-y-3 pt-1">
+                    <h3 class="text-xl font-bold">Transfer the EA Binary Files</h3>
+                    <p class="text-textMuted leading-relaxed text-sm">
+                        Open your MetaTrader 5 Terminal application on your machine. Click on <code class="bg-gray-800 text-gray-200 px-1.5 py-0.5 rounded text-xs font-mono">File</code> in the top horizontal nav menu and click <code class="bg-gray-800 text-gray-200 px-1.5 py-0.5 rounded text-xs font-mono">Open Data Folder</code>. Navigate through the path directories to <code class="bg-gray-800 text-gray-200 px-1.5 py-0.5 rounded text-xs font-mono">MQL5 &rarr; Experts</code>. Move the downloaded <code class="bg-gray-800 text-gray-200 px-1.5 py-0.5 rounded text-xs font-mono">Perennial_Grandiose.ex5</code> system file directly into this folder directory.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="flex gap-6">
+                <div class="flex-none w-10 h-10 rounded-full bg-gray-800 border border-gray-700 flex items-center justify-center font-bold font-mono text-accentNeon">02</div>
+                <div class="space-y-3 pt-1">
+                    <h3 class="text-xl font-bold">Configure Platform Permissions</h3>
+                    <p class="text-textMuted leading-relaxed text-sm">
+                        To fetch our secure validation matrix, look at the top program menu bar and go to <code class="bg-gray-800 text-gray-200 px-1.5 py-0.5 rounded text-xs font-mono">Tools &rarr; Options</code>. Select the <code class="bg-gray-800 text-gray-200 px-1.5 py-0.5 rounded text-xs font-mono">Expert Advisors</code> tab view. Check the option box for <strong>"Allow WebRequest for listed URL:"</strong> and add our cloud verification address into the list.
+                    </p>
+                    <blockquote class="bg-cardBg/60 border-l-2 border-accentNeon p-3 text-xs font-mono text-gray-400 rounded-r">
+                        https://api.perennialgrandiose.com (Or your licensing provider URL)
+                    </blockquote>
+                </div>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="flex gap-6">
+                <div class="flex-none w-10 h-10 rounded-full bg-gray-800 border border-gray-700 flex items-center justify-center font-bold font-mono text-accentNeon">03</div>
+                <div class="space-y-3 pt-1">
+                    <h3 class="text-xl font-bold">Refresh Navigation Structure & Load Setup</h3>
+                    <p class="text-textMuted leading-relaxed text-sm">
+                        Head over to your MT5 terminal <strong>Navigator panel</strong> workspace window on the left margin, right-click over <code class="bg-gray-800 text-gray-200 px-1.5 py-0.5 rounded text-xs font-mono">Expert Advisors</code>, and hit <strong>Refresh</strong>. Drag and drop <code class="bg-text-gray-200 font-bold">Perennial Grandiose EA</code> directly over to an open live pricing chart grid panel.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Step 4 -->
+            <div class="flex gap-6">
+                <div class="flex-none w-10 h-10 rounded-full bg-gray-800 border border-gray-700 flex items-center justify-center font-bold font-mono text-accentNeon">04</div>
+                <div class="space-y-3 pt-1">
+                    <h3 class="text-xl font-bold">Toggle Master Automation Live Engine</h3>
+                    <p class="text-textMuted leading-relaxed text-sm">
+                        Within the individual parameter popup menu panel, make sure to check mark the box that dictates <strong>"Allow Algo Trading"</strong> inside the Common property tab configuration window. Lastly, push the global master <span class="bg-emerald-600 text-white px-2 py-0.5 text-xs font-bold rounded">Algo Trading</span> execution toggle button found directly within the top center structural MT5 toolbar interface. The interface icon indicator chart corner item will transition into a green state representing execution ready status.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Help Notice -->
+        <section class="bg-cardBg border border-gray-800 p-6 rounded-xl flex items-center justify-between">
+            <div class="space-y-1">
+                <h4 class="font-semibold text-white">Stuck during installation?</h4>
+                <p class="text-xs text-textMuted">Let our technical infrastructure team handle your setup via secure remote assistance.</p>
+            </div>
+            <a href="https://t.me/your_telegram_username" target="_blank" class="px-4 py-2 bg-gray-800 hover:bg-gray-700 transition-colors rounded-lg text-xs font-bold text-white tracking-wide">
+                Ping Telegram Help Desk
+            </a>
+        </section>
+    </main>
+
+    <!-- Footer Area -->
+    <footer class="border-t border-gray-900/60 bg-[#070A11] py-12 text-xs text-textMuted">
+        <div class="max-w-7xl mx-auto px-6 space-y-6 md:flex md:items-center md:justify-between md:space-y-0">
+            <div>
+                <p class="font-bold text-gray-400 mb-1">&copy; 2026 Perennial Grandiose. All Rights Reserved.</p>
+                <p>Engineered for professional algorithmic proprietary and retail distribution.</p>
+            </div>
+            <div class="max-w-xl text-[11px] leading-relaxed opacity-60">
+                <strong>Risk Warning Notice:</strong> Currency exchange trading yields massive potential structural asset exposure risks and may not match compatibility criteria profiles for all retail investors. High leverage parameters can swing mechanics negatively or positively. Past performance configurations do not manifest guarantees for futures data horizons.
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
